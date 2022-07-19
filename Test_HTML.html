@@ -1,0 +1,180 @@
+<h1 id="hilfe-txt">Hilfe . txt</h1>
+<hr>
+<h3 id="sdl-bugs-on-kali-linux">SDL bugs on Kali Linux</h3>
+<h4 id="display-resolution-bug">Display resolution bug</h4>
+<h5 id="problem-">Problem:</h5>
+<p>After starting sdl via cmd cd SilentDragonLite ./SilentDragonLite <br/ >
+or mouseclick in files, SDL runs but doesnt display the full programwindow, <code>visible:</code><br/> Terms of service <br/ >
+Create passphrase<br/><br/><code>not visible</code>:<br/>buttons which are on the bottom left like &quot;Import Seed&quot; <br/>or &quot;New Wallet&quot; even with the VM using the whole screen.</p>
+<h5 id="solve-">Solve:</h5>
+<p>Change the resolution of your screen, now the y-axis from the screen is too small to display the whole SDL program we need to make it bigger, <br/ >
+go in the linux cmd promt. Open cmd and type xrandr, then type xrandr -s 7, 7 will be a format which was displayed before, chose a range between 1900:1300.
+The y axis should be over 1200</p>
+<h4 id="mouse-click-bug">Mouse click bug</h4>
+<h5 id="prolem-">Prolem:</h5>
+<p>When creating a new wallet --&gt; SDL doesnt let you click the button &quot;New wallet&quot; on the bottom right side the button is bugged. &quot;Back&quot; and &quot;Cancel&quot; are working.</p>
+<h5 id="solve-">Solve:</h5>
+<p>click first on the left side &quot;Import Seed/Wallet&quot;, then un-accept terms of use, re-accept and now you should be able to click the &quot;New Wallet&quot; Button</p>
+<h4 id="sietch-transaction-display-bug-in-sdl-gui-">Sietch transaction display bug in SDL GUI:</h4>
+<h5 id="problem-">Problem:</h5>
+<p>After sending a transaction when you instantly go to &quot;Transactions&quot; and look up your last tx sent: there will be displayed a wrong addr which could cause insecurity <br/ >
+or inner pain because you think you sent to wrong address and funds went lost. <br/ ></p>
+<h5 id="first-it-will-look-like-this-">First it will look like this:</h5>
+<table>
+<thead>
+<tr>
+<th><code>TypeOfTx</code></th>
+<th style="text-align:left"><em>Addr</em></th>
+<th>Amount of funds</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>--------------</td>
+<td style="text-align:left">----------------------------</td>
+<td>----------------------</td>
+</tr>
+<tr>
+<td><code>Send</code></td>
+<td style="text-align:left"><strong>zs1SietchTXfirst</strong></td>
+<td>50 Hush</td>
+</tr>
+<tr>
+<td>--------------</td>
+<td style="text-align:left">----------------------------</td>
+<td>----------------------</td>
+</tr>
+<tr>
+<td><code>Receive</code></td>
+<td style="text-align:left">zs1YourAddr</td>
+<td>250 Hush</td>
+</tr>
+</tbody>
+</table>
+<h5 id="after-like-10-to-30-seconds-it-should-fetch-the-real-transaction-into-the-gui-">After like 10 to 30 seconds it should fetch the real transaction into the GUI:</h5>
+<table>
+<thead>
+<tr>
+<th><code>TypeOfTx</code></th>
+<th style="text-align:left"><em>Addr</em></th>
+<th>Amount of funds</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>--------------</td>
+<td style="text-align:left">----------------------------</td>
+<td>----------------------</td>
+</tr>
+<tr>
+<td><code>Send</code></td>
+<td style="text-align:left"><strong>zs1YourRealTransaction</strong></td>
+<td>50 Hush</td>
+</tr>
+<tr>
+<td>--------------</td>
+<td style="text-align:left">----------------------------</td>
+<td>----------------------</td>
+</tr>
+<tr>
+<td><code>Receive</code></td>
+<td style="text-align:left">zs1YourAddr</td>
+<td>250 Hush</td>
+</tr>
+</tbody>
+</table>
+<h5 id="solve-">Solve:</h5>
+<p>No answer for this problem yet.</p>
+<blockquote>
+<p>According to Duke it is because of Sietch and a GUI (Graphical User Interface); <br/ >
+Before the real (your) transaction gets into a block, the SDL GUI displays one of multiple (up to 9) decoy transaction from Sietch first to fill the space in the &quot;address&quot; folder. <br/ >
+After approx. 30sec the real tx gets into a block and the GUI fetches the real addr into the folder.</p>
+</blockquote>
+<hr>
+<h3 id="compile-sdl-silentdragonlite-manual-for-windows-users-who-want-to-hide-their-sdl-and-hushchat-on-their-pc-via-vm-virtual-machine-">Compile SDL (SilentDragonLite) manual for windows-users who want to hide their SDL and HushChat on their PC via VM (Virtual machine)</h3>
+<ul>
+<li>install virtualbox like in the manuals for VM</li>
+<li>We need to manually download all compiler packages for linux to install/compile SDL --&gt;</li>
+<li>We need: qtcreator , libqt5websockets5-dev , qt5-qmake, Git, Rust and PowerShell</li>
+</ul>
+<h4 id="occured-problems-">occured problems:</h4>
+<h5 id="outdated-clients-as-suggested-downloads-">Outdated clients as suggested downloads.</h5>
+<p>For our first compile try we need only :qtcreator , libqt5websockets5-dev , qt5-qmake <br/ >
+<br/ >
+Outdated clients: qt5-default &lt;&gt; The problem with this package is that the download link, which is integrated  <br/ >
+in the installingpackges for linux is no longer active, to solve this problem we ignore the qt5-default package and use qtcreator,qt5make,libqt5websockets5-dev <br/ > <br/ >
+Error reports and mistakes while compiling with qt5-default: because the package is outdated the linux cmd promt displays a message that the download is not full or that the package is lacking information or something like that <br/ >
+Fatal error during changing the download link for qt5 via wget command --&gt; forgot to install qt5maker and libqt5websockets5-dev, Error displays in cmd say: Theres no such file for qt5maker, another Error: for websockets5 something not found, these error say that something  is missing, so we need to download these also via cmd sudo apt-get install
+<br/ > 
+start with QT5, QT5 has no 
+<br/ >
+<br/ ></p>
+<hr>
+<h3 id="how-to-extract-password-passphrases-and-metadata-from-old-wlan-connections-using-cmd">How to extract password/passphrases and metadata from old WLAN-connections using CMD</h3>
+<h4 id="for-windows-">for windows:</h4>
+<ul>
+<li>⊞(windows key) + r - opens a search window , then type cmd</li>
+<li>let the computer open the terminal :C:\users\user&gt;    &lt;&gt;</li>
+<li>type: netsh</li>
+<li>type: wlan show profile - opens all ever connected WLAN profiles on your PC</li>
+<li>chose the WLAN you want to extract the Metadata from</li>
+<li>type: wlan show profile &quot;WLAN name&quot; key=clear - Displays all metadata from the WLAN</li>
+<li>so if you re ever sleeping over at a friends and have access to their guest PC/account on PC and forgot their password,<h5 id="use-this-tool-to-get-your-passphrase-log-into-the-wlan">use this tool to get your passphrase &amp; log into the WLAN</h5>
+</li>
+</ul>
+<h4 id="python-trash-cmd-to-display-it-on-your-python-shell-if-you-are-lazy-">Python trash cmd to display it on your python shell if you are lazy:</h4>
+<pre><code class="lang-Python">import <span class="hljs-built_in">time</span>
+
+def printthismofomanual():
+    somemanuals = {'<span class="hljs-number">1.</span>)': '<span class="hljs-number">1.</span>) press windows button ⊞ +r',
+                   '<span class="hljs-number">2.</span>)': '<span class="hljs-number">2.</span>) <span class="hljs-built_in">type</span> in: cmd',
+                   '<span class="hljs-number">3.</span>)': '<span class="hljs-number">3.</span>) when &lt;terminal&gt; opens, <span class="hljs-built_in">type</span> inside the &lt;terminal&gt;: netsh',
+                   '<span class="hljs-number">4.</span>)': '<span class="hljs-number">4.</span>) <span class="hljs-built_in">type</span> in &lt;terminal&gt;: wlan <span class="hljs-keyword">show</span> profile',
+                   '<span class="hljs-number">5.</span>)': '<span class="hljs-number">5.</span>) <span class="hljs-built_in">type</span> in &lt;terminal&gt;: wlan <span class="hljs-keyword">show</span> profile <span class="hljs-string">"WLAN name numbers"</span> <span class="hljs-built_in">key</span>=<span class="hljs-keyword">clear</span>',
+                   'addinfo': '<span class="hljs-number">6.</span>) <span class="hljs-keyword">If</span> the WLANname has spaces in between(<span class="hljs-keyword">For</span> example: <span class="hljs-string">"TestWLAN 321"</span>)\n,just <span class="hljs-keyword">use</span> this <span class="hljs-keyword">format</span>, <span class="hljs-built_in">type</span> in &lt;terminal&gt;: wlan <span class="hljs-keyword">show</span> profile <span class="hljs-string">"testwlan 1234 pundestreet bahamas"</span> <span class="hljs-built_in">key</span>=<span class="hljs-keyword">clear</span>'}
+    a=[]
+    <span class="hljs-keyword">for</span> value in somemanuals.values():
+        a.append(value)
+    <span class="hljs-keyword">print</span>(<span class="hljs-string">"Extracting values from keys. . ."</span>)
+    <span class="hljs-built_in">time</span>.<span class="hljs-built_in">sleep</span>(<span class="hljs-number">5</span>)
+    <span class="hljs-keyword">print</span>(<span class="hljs-string">"All values extracted. . ."</span>)
+    <span class="hljs-built_in">time</span>.<span class="hljs-built_in">sleep</span>(<span class="hljs-number">1</span>)
+    <span class="hljs-keyword">print</span>(<span class="hljs-string">"Here is the manual: "</span>)
+    <span class="hljs-keyword">return</span> a
+
+<span class="hljs-meta">#Print out the whole thing with this:</span>
+b = printthismofomanual()
+<span class="hljs-keyword">for</span> manuels in b:
+    <span class="hljs-built_in">time</span>.<span class="hljs-built_in">sleep</span>(<span class="hljs-number">3</span>)
+    <span class="hljs-keyword">print</span>(manuels)
+</code></pre>
+<hr>
+<h3 id="how-to-install-kalilinux-on-windows">How to install KaliLinux on windows</h3>
+<p>A short manual how to install KaliLinux for windows.</p>
+<h5 id="first-check-what-type-of-operating-system-your-windows-has-">First check what type of operating System your windows has.</h5>
+<ul>
+<li>1.) Click with the left mouse button on the windows ⊞ logo on the bottom very left side where you shut down the PC and chose: &quot;System&quot; with the mouse, click</li>
+<li>2.) if you have windows 10 or windows 11 there should be a description for your PCs&#39; operating System. Example:</li>
+<li>&quot;System type:64-bit operating system, x64-based processor&quot;,</li>
+<li>&quot;productID : 0xxxx-0xxxx-0xxxx-XYZxxx&quot; etc., --------- </li>
+<li>3.) We look for 64-bit / or 32-bit this will be your operating system</li>
+</ul>
+<h5 id="download-the-thing">Download the thing</h5>
+<ul>
+<li>1.) Download virtualbox and extensions from virtualbox</li>
+<li>2.) Download KaliLinux install package from their homepage</li>
+<li>3.) Install Virtualbox and the hardware extensions for Mouse+Keyboard</li>
+<li>4.) during the installation process give the VM 10GB space and 2GB processorspace to run a smooth VM on any cracklaptop</li>
+<li>5.) When it comes to: <Chose "Operating System">: KaliLinux will not be displayed, just chose ubuntu64x or ubuntu32x depends on your windows- chose what we determined before</li>
+<li>6.) You can chose between installing a downloaded package or importing a package, the differnce is the programtype:</li>
+</ul>
+<p>If you downloaded the basic cali linux installer it should be a .iso file, If you have directly installed the VM package from their page it should be an .ovo file</p>
+<ul>
+<li>7.) Just chose the right option for the Linux package you downloaded how described a line before</li>
+<li>8.) Installation process goes very quick if you have the .ovo , the program just quickly installs all basic configurations as default (timezone, keyboard type etc etc.)</li>
+<li>9.) To login into kali linux there is a small trick, the username and password by default are: username; kali - passphrase; kali</li>
+</ul>
+<hr>
+<h3 id="useful-link-for-symbols">useful link for symbols</h3>
+<p>Collection of Links I visit from time to time
+<a href="https://unicode-table.com/en/html-entities/">Unicodesymbols_Collection_for_Python</a></p>
