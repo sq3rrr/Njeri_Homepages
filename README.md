@@ -10,6 +10,10 @@ Uf die Website chame denn Date für *Lebenslauf* *LinkedIN* und andere ghetto ve
 Usserdem evtl mit APIS und meh Wüsse über API und Internet evtl Blockexplorer ufsetze <br/>
 Au e Idee isches s selber gschriebene oder geklonte Telegram analysis script über APIs die JSON files dete druflade <br/>
 
+### Usfüehrig
+Zum en Test HTML erstelle nimi eifach die in Markdown gschriebeni Hilfe.txt datei und convertiere sie zu HTML über:
+[Free Markdown to HTML 5 Converter](https://markdowntohtml.com)
+
 ### Tools
 `Markdown` <br/>
 `Markdown + FREE Markdown zu HTML5 re-complirer` <br/>
