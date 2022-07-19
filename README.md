@@ -11,7 +11,7 @@ Usserdem evtl mit APIS und meh Wüsse über API und Internet evtl Blockexplorer 
 Au e Idee isches s selber gschriebene oder geklonte Telegram analysis script über APIs die JSON files dete druflade <br/>
 
 ### Usfüehrig
-Zum en Test HTML erstelle nimi eifach die in Markdown gschriebeni Hilfe.txt datei und convertiere sie zu HTML über: <br/ >
+Zum en Test HTML erstelle nimi eifach die in Markdown gschriebeni Hilfe.txt datei und convertiere sie zu HTML über: <br/>
 [Free Markdown to HTML 5 Converter](https://markdowntohtml.com)
 
 ### Tools
